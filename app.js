@@ -35,8 +35,12 @@ function playSong() {
     audio.play();
 }
 
+// Pause sing
 function pauseSong() {
-    
+    musicContainer.classList.remove('play');
+    playBtn.querySelector('i.fas').classList.remove('fa-pause')
+    playBtn.querySelector('i.fas').classList.add('fa-play')
+    audio.pause()
 }
 
 // Event Listeners
