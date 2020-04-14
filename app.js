@@ -26,21 +26,30 @@ function loadSong(song) {
   cover.src = `./images/${song}.jpg`;
 }
 
-
 // Play song
 function playSong() {
-    musicContainer.classList.add('play');
-    playBtn.querySelector('i.fas').classList.remove('fa-play');
-    playBtn.querySelector('i.fas').classList.add('fa-pause');
-    audio.play();
+  musicContainer.classList.add('play');
+  playBtn.querySelector('i.fas').classList.remove('fa-play');
+  playBtn.querySelector('i.fas').classList.add('fa-pause');
+  audio.play();
 }
 
-// Pause sing
+// Pause song
 function pauseSong() {
-    musicContainer.classList.remove('play');
-    playBtn.querySelector('i.fas').classList.remove('fa-pause')
-    playBtn.querySelector('i.fas').classList.add('fa-play')
-    audio.pause()
+  musicContainer.classList.remove('play');
+  playBtn.querySelector('i.fas').classList.remove('fa-pause');
+  playBtn.querySelector('i.fas').classList.add('fa-play');
+  audio.pause();
+}
+
+// Previous Song
+function prevSong() {
+    songIndex--;
+    if (songIndex < 0) {
+        songIndex = songs.length - 1;
+    }
+    loadSong(songs[songIndex]);
+    playSong();
 }
 
 // Event Listeners
@@ -52,3 +61,7 @@ playBtn.addEventListener('click', () => {
     playSong();
   }
 });
+
+// Change Song
+prevBtn.addEventListener('click', prevSong);
+nextBtn.addEventListener('click', nextSong);
