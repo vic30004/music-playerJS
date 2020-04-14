@@ -1,5 +1,5 @@
 # music-playerJS
-This is a simple music player application creat by JS. 
+This is a simple music player application created by JS. 
 
 # Live Link
 
